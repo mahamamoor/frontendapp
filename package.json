@@ -47,5 +47,6 @@
   "bugs": {
     "url": "https://github.com/mahamamoor/frontendapp/issues"
   },
-  "homepage": "https://github.com/mahamamoor/frontendapp#readme"
+  "homepage": "https://github.com/mahamamoor/frontendapp#readme",
+  "devDependencies": {}
 }
