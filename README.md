@@ -1,3 +1,7 @@
+June 1st
+established connection to mongo and heroku
+getting started on frontend by creating components 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
