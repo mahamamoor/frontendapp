@@ -1,10 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+// import {useState, useEffect} from 'react'
+// import axios from 'axios'
 
-function App() {
-  return (
-<h1>hi</h1>
-  );
+
+
+
+const App = () => {
+
+
+
+return (
+  <div>
+    <h1>Hi</h1>
+  </div>
+  )
 }
 
 export default App;
