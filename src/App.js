@@ -17,8 +17,6 @@ const [seeSenators, setSeeSenators] = useState(false)
 //State that controls visibiility of forum "page"
 const [seeForum, setSeeForum] = useState(false)
 
-//State that controls visibiility of forum "page"
-const [seeHome, setSeeHome] = useState(true)
 
 //State for senator data
 const [senator, setSenator] = useState([])
@@ -30,23 +28,19 @@ const [forum, setForum] = useState([])
 const showSenators = () => {
   setSeeSenators(true)
   setSeeForum(false)
-  setSeeHome(false)
 }
 
 //Shows forum and hides everything else
 const showForum = () => {
   setSeeSenators(false)
   setSeeForum(true)
-  setSeeHome(false)
 }
 
 //Shows home and hides everything else
 const showHome = () => {
   setSeeSenators(false)
   setSeeForum(false)
-  setSeeHome(true)
 }
-
 
 
 
@@ -77,7 +71,6 @@ useEffect(() => {
       <div className="showButtons">
         <button onClick={showForum}>Forum</button>
         <button onClick={showSenators}>Senators</button>
-        <button onClick={showHome}>Home</button>
       </div>
       <div className="senators-container">
         {senator.map((senator) => {
