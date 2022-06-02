@@ -42,9 +42,15 @@ const App = () => {
       <button onClick={showHome}>Home</button>
       <button onClick={showMsa}>MSA</button>
     </div>
+    <Home/>
+    <div className="home-container">
+    {viewHome ? <Home/> : ""}
+    </div>
+    <div className="msa-container">
+    {viewMsa ? <Msa msa={msa}/> : ""}
+    </div>
     </>
   );
 }
 
 export default App;
-    // <Msa msa={msa} />
