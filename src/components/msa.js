@@ -1,7 +1,3 @@
-// import React from 'react'
-// import './css/msa.css'
-// import {useState} from 'react';
-
 const Msa = (props) => {
 
   return (
@@ -14,6 +10,7 @@ const Msa = (props) => {
             {props.msa.map((shooting) => {
               return (
                 <>
+                <img src={shooting.sources} class="card-img-top" alt="Read More"/>
                 <h5 className="card-title">{shooting.case}</h5>
                 <p className="card-text">{shooting.date}</p>
                 <p className="card-text">{shooting.location__1}</p>
