@@ -4,7 +4,7 @@ const Senator = (props) => {
 
 
 	return (
-		<div className="senator">
+		<div className="senator-card">
 		<h1>Senators</h1>
 		<h2>{props.senator.name}</h2>
 		<img src={props.senator.image}/>
