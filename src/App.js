@@ -90,6 +90,7 @@ const newCommentChange = (event) => {
 const newEmojiChange = (event) => {
   setNewEmoji(event.target.value)
 }
+
 ////////////////////////////Functions to setState for each value//////////////////
 
 ////////////////////////////Variables for APIBaseURL//////////////////////////
