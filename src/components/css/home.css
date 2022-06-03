@@ -1,6 +1,13 @@
 .home-page-header{
   text-align: center;
 }
+.stats{
+  color: white;
+  font-size: 30px;
+  margin: 100px;
+  word-break: normal;
+  white-space: normal;
+}
 .slideshow {
   margin: 0 auto;
   overflow: hidden;

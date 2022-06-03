@@ -14,7 +14,7 @@ const App = () => {
   //state for shootings
   const [msa, setMsa] = useState([]);
   //state to show and hide home page
-  const [viewHome, setViewHome] = useState(false);
+  const [viewHome, setViewHome] = useState(true);
   //state to show and hide msa page
   const [viewMsa, setViewMsa] = useState(false);
   // shows home page and hides everything else
@@ -42,7 +42,6 @@ const App = () => {
       <button onClick={showHome}>Home</button>
       <button onClick={showMsa}>MSA</button>
     </div>
-    <Home/>
     <div className="home-container">
     {viewHome ? <Home/> : ""}
     </div>
