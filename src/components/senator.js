@@ -4,18 +4,24 @@ const Senator = (props) => {
 
 
 	return (
-		<div className="senator-card">
+		<>
 		<h1>Senators</h1>
-		<h2>{props.senator.name}</h2>
-		<img src={props.senator.image}/>
-		<p>State: {props.senator.state}</p>
-		<p>Party: {props.senator.party}</p>
-		<p>View on gun control: {props.senator.leaning}</p>
-		<p>Amount received from NRA: {props.senator.funding}</p>
-		<a href={props.senator.email} target="_blank">Email {props.senator.name}</a>
-		<p>Phone: {props.senator.phone}</p>
-		<br/>
-		</div>
+		{props.senator.map((senator) => {
+			return (
+				<div className="senator-card" key={senator._id}>
+					<h2>{senator.name}</h2>
+					<img src={senator.image}/>
+					<p>State: {senator.state}</p>
+					<p>Party: {senator.party}</p>
+					<p>View on gun control: {senator.leaning}</p>
+					<p>Amount received from NRA: {senator.funding}</p>
+					<a href={senator.email} target="_blank">Email {senator.name}</a>
+					<p>Phone: {senator.phone}</p>
+					<br/>
+				</div>
+			)
+		})}
+	</>
 	)
 }
 
