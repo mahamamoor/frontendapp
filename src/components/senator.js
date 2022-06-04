@@ -2,11 +2,23 @@ import {useState, useEffect} from 'react'
 
 const Senator = (props) => {
 
+const [search, setSearch] = useState("")
+
 
 	return (
 		<>
+		<div className="searchbar">
+			<p className="stateSearch">Search for your state</p>
+			<input type="text" placeholder="Search..." onChange={event => {setSearch(event.target.value)}}/>
+		</div>
 		<h1>Senators</h1>
-		{props.senator.map((senator) => {
+		{props.senator.filter((senator) => {
+			if (search == "") {
+				return senator
+			} else if (senator.state.toLowerCase().includes(search.toLowerCase())) {
+				return senator
+			}
+		}).map((senator) => {
 			return (
 				<div className="senator-card" key={senator._id}>
 					<h2>{senator.name}</h2>
