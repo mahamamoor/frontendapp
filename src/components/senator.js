@@ -1,8 +1,10 @@
 import {useState, useEffect} from 'react'
 
+
 const Senator = (props) => {
 
 const [search, setSearch] = useState("")
+
 
 
 	return (

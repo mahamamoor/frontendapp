@@ -5,9 +5,10 @@ import bootstrap from 'bootstrap'
 
 //Importing senator component
 import Senator from './components/senator'
-
 //Importing forum component
 import Forum from './components/forum'
+//Importing pagination component
+import Pagination from './components/pagination'
 
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
 const [seeSenators, setSeeSenators] = useState(false)
 //State that controls visibiility of forum "page"
 const [seeForum, setSeeForum] = useState(false)
+//State that controls visibiility of pagination
+const [seePagination, setSeePagination] = useState(false)
 //State for senator data
 const [senator, setSenator] = useState([])
 //State for forum data
@@ -32,6 +35,11 @@ const [seeNewPostForm, setSeeNewPostForm] = useState(false)
 const [seeUpdatePostForm, setSeeUpdatePostForm] = useState(false)
 //State that sets current post that is being updated
 const [editPost, setEditPost] = useState({})
+
+//State that sets current page
+const [currentPage, setCurrentPage] = useState(1)
+//State that sets how many posts per page
+const [postsPerPage, setPostsPerPage] = useState(5)
 ////////////////////////////State//////////////////////////
 
 ////////////////////////////Show/Hide//////////////////////////
@@ -39,12 +47,14 @@ const [editPost, setEditPost] = useState({})
 const showSenators = () => {
   setSeeSenators(true)
   setSeeForum(false)
+  setSeePagination(false)
 }
 
 //Shows forum and hides everything else
 const showForum = () => {
   setSeeSenators(false)
   setSeeForum(true)
+  setSeePagination(true)
 }
 
 //Controls the visibility of creating a new post
@@ -120,6 +130,10 @@ const newPostSubmit = (event) => {
       })
     })
     toggleNewPostForm()
+    setNewUsername()
+    setNewAvatar()
+    setNewComment()
+    setNewEmoji()
 }
 ////////////////////////////Creates Forum Post//////////////////////////
 
@@ -161,6 +175,7 @@ const postUpdate = (event, forumData) => {
     setNewAvatar()
     setNewComment()
     setNewEmoji()
+    setEditPost({})
 }
 
 //Assigns the post that is being edited and when update button is clicked, toggles the update form so it is visibile for that specific post
@@ -186,6 +201,16 @@ useEffect(() => {
 },[])
 ////////////////////////////On Page Load//////////////////////////
 
+////////////////////////////Pagination Functions//////////////////////////
+
+const indexOfLastPost = currentPage * postsPerPage
+const indexOfFirstPost = indexOfLastPost - postsPerPage
+const currentPosts = forum.slice(indexOfFirstPost, indexOfLastPost)
+
+const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+////////////////////////////Pagination Functions//////////////////////////
+
 
 
 
@@ -199,7 +224,10 @@ useEffect(() => {
           {seeSenators ? <Senator senator={senator}/> : ""}
       </div>
       <div className="forum-container">
-            {seeForum ? <Forum toggleNewPostForm={toggleNewPostForm} forum={forum} newPostSubmit={newPostSubmit} newUsernameChange={newUsernameChange} newAvatarChange={newAvatarChange} newCommentChange={newCommentChange} newEmojiChange={newEmojiChange} seeNewPostForm={seeNewPostForm} postDelete={postDelete} assignEditPost={assignEditPost} editPost={editPost} seeUpdatePostForm={seeUpdatePostForm} postUpdate={postUpdate} toggleUpdatePostForm={toggleUpdatePostForm}/> : ""}
+            {seeForum ? <Forum toggleNewPostForm={toggleNewPostForm} forum={forum} newPostSubmit={newPostSubmit} newUsernameChange={newUsernameChange} newAvatarChange={newAvatarChange} newCommentChange={newCommentChange} newEmojiChange={newEmojiChange} seeNewPostForm={seeNewPostForm} postDelete={postDelete} assignEditPost={assignEditPost} editPost={editPost} seeUpdatePostForm={seeUpdatePostForm} postUpdate={postUpdate} toggleUpdatePostForm={toggleUpdatePostForm} forum={currentPosts}/> : ""}
+      </div>
+      <div>
+          {seePagination ? <Pagination postsPerPage={postsPerPage} totalPosts={forum.length} paginate={paginate}/> : ""}
       </div>
   </>
   )

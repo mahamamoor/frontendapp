@@ -96,7 +96,8 @@ const Forum = (props) => {
                props.seeUpdatePostForm ?
                <div className="updatePost">
                   <form onSubmit={(event) => {props.postUpdate(event, forum)}}>
-                    Username: <input type="text" onChange={props.newUsernameChange} placeholder={props.forum.username}/><br/>
+                    Username: <input type="text" onChange={props.newUsernameChange} placeholder={forum.username}/><br/>
+
                     Avatar:
                    <div className="radio-img-container">
 
@@ -127,8 +128,8 @@ const Forum = (props) => {
 
                    </div>
 
-                     Comment: <textarea type="text" onChange={props.newCommentChange}/><br/>
-                     
+                     Comment: <textarea placeholder={forum.comment} type="text" onChange={props.newCommentChange}/><br/>
+
                     <div class="emoji-container">
             			     Pick an emoji
             			     <div class="emoji-input-container">
