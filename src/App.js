@@ -1,6 +1,7 @@
 import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import bootstrap from 'bootstrap'
 
 //Importing senator component
 import Senator from './components/senator'

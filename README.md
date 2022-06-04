@@ -1,3 +1,12 @@
+Resources
+
+Avatars:
+https://www.uidownload.com/free-vectors/animal-avatars-collection-free-vector-415710
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
