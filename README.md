@@ -1,6 +1,10 @@
 June 1st
 established connection to mongo and heroku
-getting started on frontend by creating components 
+getting started on frontend by creating components
+
+June 2nd
+resource used for creating slideshow on homepage
+https://tinloof.com/blog/how-to-build-an-auto-play-slideshow-with-react
 
 # Getting Started with Create React App
 
