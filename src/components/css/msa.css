@@ -1,0 +1,106 @@
+.data-description{
+  display: flex;
+  text-align: center;
+  padding: 2em;
+}
+.data{
+  font-size: 20px;
+  color: black;
+}
+.shootings-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  margin: 1em;
+}
+.shooting-card {
+  background-color: #0088EE;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33.333333%;
+  color: white;
+  padding: 1.5em;
+  margin: 1em;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/* .shooting-info-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+} */
+.card-case {
+  font-size: 18px;
+  /* margin-right: 15px;
+  margin-top: 2px; */
+  text-align: left;
+  margin: 0.5em;
+}
+.card-date {
+  font-size: 18px;
+  /* margin-right: 15px;
+  margin-top: 2px; */
+  text-align: left;
+  margin: 0.5em;
+}
+.card-summary {
+  font-size: 18px;
+  /* margin-right: 15px;
+  word-break: normal; */
+  white-space: normal;
+  margin-top: 2px;
+  margin: 0.5em;
+  /* padding-bottom: 1em; */
+}
+
+.button {
+  display: inline;
+  margin: auto;
+  margin-left: 1em;
+  margin-top: 1em;
+  border: none;
+  background-color: white;
+  padding: 8px 10px;
+  color: #0088EE;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
+.button:hover {
+  background: #0088EE;
+  color: white;
+}
+.msa-pagination{
+  text-align: center;
+  height: 5%;
+  padding: 0;
+  margin-top: 5em;
+  margin-bottom: 2em;
+}
+ul.msa-pagination .msa-page-item a {
+  text-decoration: none;
+}
+ul.msa-pagination li {
+  display: inline;
+}
+ul.msa-pagination li a {
+  color: #0088EE;
+  border: 1px solid rgba(83, 166, 218, 0.2);
+  padding: 8px 16px;
+}
+.msa-page-item{
+  padding: 0.3em;
+  font-weight: bold;
+  font-size: 18px;
+}
+ul.msa-pagination li a.active{
+  background-color: #0088EE;
+}
+ul.msa-pagination li a:hover{
+  background-color: #0088EE;
+  color: white;
+}

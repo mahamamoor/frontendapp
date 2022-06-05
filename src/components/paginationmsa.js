@@ -1,4 +1,5 @@
 import React from 'react'
+import './css/msa.css'
 
 const Paginationmsa = ({msaPerPage, totalMsaPosts, msaPaginate}) => {
 
@@ -8,7 +9,7 @@ const Paginationmsa = ({msaPerPage, totalMsaPosts, msaPaginate}) => {
 		pagenumba.push(i)
 	}
 	return (
-		<div>
+		<div className="msa-page-div">
 			<ul className="msa-pagination">
 			{pagenumba.map(number => (
 				<li key={number} className="msa-page-item">
