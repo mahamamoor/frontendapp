@@ -1,0 +1,88 @@
+.slideshow-page-header{
+  text-align: center;
+  padding-top: 10%;
+}
+.stats{
+  color: white;
+  font-size: 30px;
+  margin: 100px;
+  word-break: normal;
+  white-space: normal;
+  /* text-shadow: 1px 1px 5px black; */
+}
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 800px;
+}
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+.slide {
+  display: inline-block;
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
+}
+.slideshowDots {
+  text-align: center;
+}
+.slideshowDot {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  background-color: #c4c4c4;
+}
+.slideshowDot.active {
+  background-color: #7FC3F6;
+}
+.about-home-page{
+  color: white;
+  background-color: #0088EE;
+  margin-top: 6%;
+  padding: 30px;
+  line-height: 3em;
+}
+.about-app{
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+}
+.sources{
+  margin-top: 20%;
+  text-align: center;
+  margin-bottom: 15%;
+}
+.footer{
+  background-color: #0088EE;
+  font-size: 20px;
+  color: white;
+  margin-top: 10%;
+  padding: 15px;
+}
+.home-page-buttons {
+  padding-top: 10%;
+  margin: 0.1em;
+  font-size: 20px;
+}
+.home-button {
+  display: inline;
+  margin: 1.8em;
+  border: none;
+  background-color: #0088EE;
+  padding: 16px 40px;
+  color: white;
+  font-size: 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
+.home-button:hover {
+  background: red;
+}

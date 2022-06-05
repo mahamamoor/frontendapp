@@ -1,3 +1,20 @@
+
+Avatars:
+https://www.uidownload.com/free-vectors/animal-avatars-collection-free-vector-415710
+
+Contacting senators:
+https://blog.sanebox.com/2017/02/23/how-to-email-your-senator-and-make-your-voice-heard/
+
+June 1st
+established connection to mongo and heroku
+getting started on frontend by creating components
+
+June 2nd
+resource used for creating slideshow on homepage
+copied code from author Omar Benseddik
+added an array for statistics and added line of code to map in the array of statistics
+https://tinloof.com/blog/how-to-build-an-auto-play-slideshow-with-react
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
