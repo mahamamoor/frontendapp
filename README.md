@@ -1,3 +1,9 @@
+
+Avatars:
+https://www.uidownload.com/free-vectors/animal-avatars-collection-free-vector-415710
+
+
+
 June 1st
 established connection to mongo and heroku
 getting started on frontend by creating components
