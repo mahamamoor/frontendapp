@@ -70,6 +70,9 @@ const showSenators = () => {
   setSeeSenators(true)
   setSeeForum(false)
   setSeePagination(false)
+  setViewHome(false)
+  setViewMsa(false)
+  setSeeMsaPagination(false)
 }
 
 //Shows forum and hides everything else
@@ -77,22 +80,32 @@ const showForum = () => {
   setSeeSenators(false)
   setSeeForum(true)
   setSeePagination(true)
+  setViewHome(false)
+  setViewMsa(false)
+  setSeeMsaPagination(false)
 }
-  
+
 // shows msa page and hides everything else
 const showMsa = () => {
     setViewMsa(true)
     setViewHome(false)
     setSeeMsaPagination(true)
+    setSeePagination(false)
+    setSeeForum(false)
+    setSeeSenators(false)
 }
-  
+
   // shows home page and hides everything else
   const showHome = () => {
     setViewHome(true)
     setViewMsa(false)
     setSeeMsaPagination(false)
+    setSeePagination(false)
+    setSeeForum(false)
+    setSeeSenators(false)
+
   }
-  
+
   //Controls the visibility of creating a new post
 	const toggleNewPostForm = () => {
 	  if (seeNewPostForm === false) {
@@ -116,14 +129,19 @@ const showMsa = () => {
   }
 }
 ////////////////////////////Show/Hide//////////////////////////
-  
-  // msa pagination function
-  const indexForLastPost = currentMsaPage * msaPerPage
-  const indexForFirstPost = indexForLastPost - msaPerPage
-  const currentDataBlurbs = msa.slice(indexForFirstPost, indexForLastPost)
 
-  const msaPaginate = (pagenumba) => setCurrentMsaPage(pagenumba)
-  
+  // msa pagination function
+const indexForLastPost = currentMsaPage * msaPerPage
+const indexForFirstPost = indexForLastPost - msaPerPage
+const currentDataBlurbs = msa.slice(indexForFirstPost, indexForLastPost)
+const msaPaginate = (pagenumba) => setCurrentMsaPage(pagenumba)
+
+//forum pagination function
+const indexOfLastPost = currentPage * postsPerPage
+const indexOfFirstPost = indexOfLastPost - postsPerPage
+const currentPosts = forum.slice(indexOfFirstPost, indexOfLastPost)
+const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
 
 ////////////////////////////Functions to setState for each value///////////////////
 //Adding new username
@@ -231,10 +249,10 @@ const assignEditPost = (forumData) => {
  }
 
 ////////////////////////////Updates Forum Post//////////////////////////
-  
-  
+
+
  ////////////////////////////On Page Load//////////////////////////
-  
+
 //On page load get senator msa, and forum data
 useEffect(() => {
   axios
@@ -245,15 +263,17 @@ useEffect(() => {
   setMsa(res.data.shooting);
   })
 },[])
-  
+
 ////////////////////////////On Page Load//////////////////////////
-  
+
 
   return (
     <>
     <div className="showButtons">
-      <button onClick={showHome}>Home</button>
-      <button onClick={showMsa}>MSA</button>
+      <button className="navButtons" onClick={showHome}>Home</button>
+      <button className="navButtons" onClick={showMsa}>MSA</button>
+      <button className="navButtons" onClick={showForum}>Forum</button>
+      <button className="navButtons" onClick={showSenators}>Senators</button>
     </div>
     <div className="home-container">
     {viewHome ? <Home/> : ""}
@@ -264,13 +284,17 @@ useEffect(() => {
     <div>
     {seeMsaPagination ? <Paginationmsa msaPerPage={msaPerPage} totalMsaPosts={msa.length} msaPaginate={msaPaginate}/> : ""}
     </div>
+    <div className="senators-page">
+          {seeSenators ? <Senator senator={senator}/> : ""}
+      </div>
+      <div className="forum-container">
+            {seeForum ? <Forum toggleNewPostForm={toggleNewPostForm} forum={forum} newPostSubmit={newPostSubmit} newUsernameChange={newUsernameChange} newAvatarChange={newAvatarChange} newCommentChange={newCommentChange} newEmojiChange={newEmojiChange} seeNewPostForm={seeNewPostForm} postDelete={postDelete} assignEditPost={assignEditPost} editPost={editPost} seeUpdatePostForm={seeUpdatePostForm} postUpdate={postUpdate} toggleUpdatePostForm={toggleUpdatePostForm} forum={currentPosts}/> : ""}
+      </div>
+      <div>
+          {seePagination ? <Pagination postsPerPage={postsPerPage} totalPosts={forum.length} paginate={paginate}/> : ""}
+      </div>
     </>
   )
 }
 
-
-
-
-
-
-
+export default App;
