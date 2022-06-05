@@ -4,6 +4,8 @@ getting started on frontend by creating components
 
 June 2nd
 resource used for creating slideshow on homepage
+copied code from author Omar Benseddik
+added an array for statistics and added line of code to map in the array of statistics
 https://tinloof.com/blog/how-to-build-an-auto-play-slideshow-with-react
 
 # Getting Started with Create React App
