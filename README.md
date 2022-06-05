@@ -1,10 +1,16 @@
+#frontend
+Links to our projects:
 
-Avatars:
-https://www.uidownload.com/free-vectors/animal-avatars-collection-free-vector-415710
+Approach taken:
+worked together on backend
+maha worked on home and msa page
+nikki worked on senator and forum page
 
-Contacting senators:
-https://blog.sanebox.com/2017/02/23/how-to-email-your-senator-and-make-your-voice-heard/
+Unsolved problems:
+Modal for read more
+Pagination - highlighting the current page number
 
+Timeline of workflow:
 June 1st
 established connection to mongo and heroku
 getting started on frontend by creating components
@@ -15,7 +21,14 @@ copied code from author Omar Benseddik
 added an array for statistics and added line of code to map in the array of statistics
 https://tinloof.com/blog/how-to-build-an-auto-play-slideshow-with-react
 
-# Getting Started with Create React App
+Resources:
+Avatars:
+https://www.uidownload.com/free-vectors/animal-avatars-collection-free-vector-415710
+
+Contacting senators:
+https://blog.sanebox.com/2017/02/23/how-to-email-your-senator-and-make-your-voice-heard/
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -84,4 +97,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
