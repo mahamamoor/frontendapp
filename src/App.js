@@ -62,6 +62,8 @@ const [currentMsaPage, setCurrentMsaPage] = useState(1);
 const [msaPerPage, setMsaPerPage] = useState(10);
 // state for show and hide msa page numbers
 const [seeMsaPagination, setSeeMsaPagination] = useState(false)
+
+const [seeNavButtons, setSeeNavButtons] = useState(false)
 ////////////////////////////State//////////////////////////
 
 ////////////////////////////Show/Hide//////////////////////////
@@ -73,6 +75,7 @@ const showSenators = () => {
   setViewHome(false)
   setViewMsa(false)
   setSeeMsaPagination(false)
+  setSeeNavButtons(true)
 }
 
 //Shows forum and hides everything else
@@ -83,6 +86,7 @@ const showForum = () => {
   setViewHome(false)
   setViewMsa(false)
   setSeeMsaPagination(false)
+  setSeeNavButtons(true)
 }
 
 // shows msa page and hides everything else
@@ -93,6 +97,7 @@ const showMsa = () => {
     setSeePagination(false)
     setSeeForum(false)
     setSeeSenators(false)
+    setSeeNavButtons(true)
 }
 
   // shows home page and hides everything else
@@ -103,6 +108,7 @@ const showMsa = () => {
     setSeePagination(false)
     setSeeForum(false)
     setSeeSenators(false)
+    setSeeNavButtons(false)
 
   }
 
@@ -269,14 +275,15 @@ useEffect(() => {
 
   return (
     <>
-    <div className="showButtons">
+    {seeNavButtons ? <div className="showButtons">
       <button className="navButtons" onClick={showHome}>Home</button>
       <button className="navButtons" onClick={showMsa}>MSA</button>
       <button className="navButtons" onClick={showForum}>Forum</button>
       <button className="navButtons" onClick={showSenators}>Senators</button>
     </div>
+    : "" }
     <div className="home-container">
-    {viewHome ? <Home/> : ""}
+    {viewHome ? <Home showHome={showHome} showMsa={showMsa} showForum={showForum} showSenators={showSenators}/> : ""}
     </div>
     <div className="msa-container">
     {viewMsa ? <Msa msa={currentDataBlurbs}/> : ""}
