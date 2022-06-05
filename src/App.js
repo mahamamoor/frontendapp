@@ -200,37 +200,3 @@ useEffect(() => {
   })
 },[])
 ////////////////////////////On Page Load//////////////////////////
-
-////////////////////////////Pagination Functions//////////////////////////
-
-const indexOfLastPost = currentPage * postsPerPage
-const indexOfFirstPost = indexOfLastPost - postsPerPage
-const currentPosts = forum.slice(indexOfFirstPost, indexOfLastPost)
-
-const paginate = (pageNumber) => setCurrentPage(pageNumber)
-
-////////////////////////////Pagination Functions//////////////////////////
-
-
-
-
-  return (
-    <>
-      <div className="showButtons">
-        <button className="navButtons" onClick={showForum}>Forum</button>
-        <button className="navButtons" onClick={showSenators}>Senators</button>
-      </div>
-      <div className="senators-page">
-          {seeSenators ? <Senator senator={senator}/> : ""}
-      </div>
-      <div className="forum-container">
-            {seeForum ? <Forum toggleNewPostForm={toggleNewPostForm} forum={forum} newPostSubmit={newPostSubmit} newUsernameChange={newUsernameChange} newAvatarChange={newAvatarChange} newCommentChange={newCommentChange} newEmojiChange={newEmojiChange} seeNewPostForm={seeNewPostForm} postDelete={postDelete} assignEditPost={assignEditPost} editPost={editPost} seeUpdatePostForm={seeUpdatePostForm} postUpdate={postUpdate} toggleUpdatePostForm={toggleUpdatePostForm} forum={currentPosts}/> : ""}
-      </div>
-      <div>
-          {seePagination ? <Pagination postsPerPage={postsPerPage} totalPosts={forum.length} paginate={paginate}/> : ""}
-      </div>
-  </>
-  )
-}
-
-export default App;
