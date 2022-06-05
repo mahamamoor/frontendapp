@@ -217,10 +217,10 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber)
   return (
     <>
       <div className="showButtons">
-        <button onClick={showForum}>Forum</button>
-        <button onClick={showSenators}>Senators</button>
+        <button className="navButtons" onClick={showForum}>Forum</button>
+        <button className="navButtons" onClick={showSenators}>Senators</button>
       </div>
-      <div className="senators-container">
+      <div className="senators-page">
           {seeSenators ? <Senator senator={senator}/> : ""}
       </div>
       <div className="forum-container">
