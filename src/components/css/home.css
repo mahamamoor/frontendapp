@@ -38,3 +38,11 @@
 .slideshowDot.active {
   background-color: #6a0dad;
 }
+.about-home-page{
+  color: white;
+  background-color: #0088EE;
+  margin-top: 15%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 2em;
+}
