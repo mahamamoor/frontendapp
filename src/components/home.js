@@ -73,6 +73,7 @@ const Home = (props) => {
     <h4>Sources:</h4>
       <p>“Stanford Mass Shootings in America, courtesy of the Stanford Geospatial Center and Stanford Libraries”. https://github.com/StanfordGeospatialCenter/MSA. </p>
       <p>Cochrane, Emily, et al. "Where Senate Republicans Stand on Gun Legislation." <i>The New York Times,</i> https://www.nytimes.com/interactive/2022/05/25/us/gun-control-republican-senators.html</p>
+      <p>"Mother Jones: A Guide to Mass Shootings in America." https://www.motherjones.com/politics/2012/07/mass-shootings-map/</p>
       <p>"Mass Shootings." <i>Everytown,</i> https://www.everytown.org/issues/mass-shootings/</p>
       <p>Republican senators: Republican Leadership. https://www.republicanleader.senate.gov/senate-resources/republican-senators</p>
       <p>https://www.senate.gov/general/contact_information/senators_cfm.xml</p>
