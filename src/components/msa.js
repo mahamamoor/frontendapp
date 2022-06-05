@@ -5,21 +5,18 @@ const Msa = (props) => {
 
   return (
     <>
-      <h1 className="shootings-title">Mass Shootings in America</h1>
+    <div className="data-description">
+        <h4 className="data">Data Fields: City/state, date, brief description, fatalities, injured, venue, mental health history, weapons obtained legally, where obtained, type of weapon/details, race, gender, lat/long.Data Fields: City/state, date, brief description, fatalities, injured, venue, mental health history, weapons obtained legally, where obtained, type of weapon/details, race, gender, lat/long.Data Fields: City/state, date, brief description, fatalities, injured, venue, mental health history, weapons obtained legally, where obtained, type of weapon/details, race, gender, lat/long.</h4>
+    </div>
         <div className="shootings-container">
             {props.msa.map((shooting) => {
               return (
                 <>
                 <div className="shooting-card">
-                  <h5 className="card-case-label">Case:</h5>
                   <h5 className="card-case">{shooting.case}</h5>
-                  <p className="card-date-label">Date: </p>
                   <p className="card-date">{shooting.date}</p>
-                  <p className="card-summary-label">Summary:</p>
                   <p className="card-summary">{shooting.summary}</p>
-                  <div className="button">
-                  <button>Read more</button>
-                  </div>
+                  <button className="button">Read more</button>
                 </div>
               </>
               )

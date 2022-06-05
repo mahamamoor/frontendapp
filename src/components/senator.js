@@ -9,7 +9,10 @@ const [noSearch, setNoSearch] = useState("No Republican Senator from that state"
 
 	return (
 		<>
-		<h1 className="Title">Senators</h1>
+		<div className="take-action">
+			<h2 className="how-to-take-action-1">Search for your Senator below and email/call them using the script below. Let them know your position and why it matters to you— tell them how the legislation and its implications impact you and others.</h2>
+			<h3 className="how-to-take-action-2">"Hello, I'm a constituent. I'd like to let the Senator know it is important to me that they vote for the gun safety reforms coming before Congress."</h3>
+		</div>
 		<div className="searchbar">
 			<p className="stateSearch">Search for your state</p>
 			<input className="input-search" type="text" placeholder="Search..." onChange={event => {setSearch(event.target.value)}}/>
@@ -20,7 +23,7 @@ const [noSearch, setNoSearch] = useState("No Republican Senator from that state"
 				return senator
 			} else if (senator.state.toLowerCase().includes(search.toLowerCase())) {
 				return senator
-			} 
+			}
 		}).map((senator) => {
 			return (
 				<div className="senator-card" key={senator._id}>
