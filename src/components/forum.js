@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import '../App.css';
-import bootstrap from 'bootstrap'
 import bear from '../bear-avatar.png'
 import cat from '../cat-avatar.png'
 import dog from '../dog-avatar.png'

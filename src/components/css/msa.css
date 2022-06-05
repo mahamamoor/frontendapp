@@ -1,0 +1,70 @@
+.shootings-title{
+  text-align: center;
+  font-size: 26px;
+}
+.shootings-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  margin: 1em;
+}
+.shooting-card {
+  background-color: rgb(2,3,129);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33.333333%;
+  color: white;
+  padding: 1.5em;
+  margin: 1em;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  text-shadow: 2px 2px 20px black;
+}
+/* .shooting-info-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+} */
+.card-case-label{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+.card-case {
+  font-size: 18px;
+  margin-right: 15px;
+  margin-top: 2px;
+  text-align: center;
+}
+.card-date-label{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+.card-date {
+  font-size: 18px;
+  margin-right: 15px;
+  margin-top: 2px;
+  text-align: center;
+}
+.card-summary-label{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+.card-summary {
+  font-size: 18px;
+  margin-right: 15px;
+  word-break: normal;
+  white-space: normal;
+  margin-top: 2px;
+}
+.button{
+  text-align: center;
+  padding: 2px 2px;
+}
