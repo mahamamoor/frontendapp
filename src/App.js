@@ -312,7 +312,7 @@ const assignMsaDataSet = (msaData) => {
 //On page load get senator msa, and forum data
 useEffect(() => {
   axios
-  .get('http://localhost:3000/project3')
+  .get(APIBaseURL2)
   .then((res) => {
   setSenator(res.data.senator)
   setForum(res.data.thoughts)
