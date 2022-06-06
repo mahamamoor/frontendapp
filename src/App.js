@@ -60,6 +60,8 @@ const [currentMsaPage, setCurrentMsaPage] = useState(1);
 const [msaPerPage, setMsaPerPage] = useState(10);
 // state for show and hide msa page numbers
 const [seeMsaPagination, setSeeMsaPagination] = useState(false)
+// state for nav buttons
+const [seeNavButtons, setSeeNavButtons] = useState(false)
 // state for NavBar
 const [seeNavBar, setSeeNavBar] = useState(false)
 // states for reading more on msa data
@@ -83,6 +85,7 @@ const showSenators = () => {
   setViewHome(false)
   setViewMsa(false)
   setSeeMsaPagination(false)
+  setSeeNavButtons(true)
   setSeeNavBar(true)
 }
 
@@ -94,6 +97,7 @@ const showForum = () => {
   setViewHome(false)
   setViewMsa(false)
   setSeeMsaPagination(false)
+  setSeeNavButtons(true)
   setSeeNavBar(true)
 }
 
@@ -105,7 +109,9 @@ const showMsa = () => {
     setSeePagination(false)
     setSeeForum(false)
     setSeeSenators(false)
+    setSeeNavButtons(true)
     setSeeNavBar(true)
+
 }
 
   // shows home page and hides everything else
@@ -116,6 +122,7 @@ const showMsa = () => {
     setSeePagination(false)
     setSeeForum(false)
     setSeeSenators(false)
+    setSeeNavButtons(false)
     setSeeNavBar(false)
   }
   //Controls the visibility of creating a new post
@@ -191,7 +198,7 @@ const APIBaseURL2 = 'https://rocky-savannah-90233.herokuapp.com/project3'
 const newPostSubmit = (event) => {
   event.preventDefault()
   axios.post(
-      `${APIBaseURL}/forum`,
+      `${APIBaseURL2}/forum`,
       {
         username: newUsername,
         avatar: newAvatar,
@@ -200,7 +207,7 @@ const newPostSubmit = (event) => {
       }
     ).then(() => {
       axios
-      .get(APIBaseURL)
+      .get(APIBaseURL2)
       .then((response) => {
           setForum(response.data.thoughts)
       })
@@ -216,10 +223,10 @@ const newPostSubmit = (event) => {
 ////////////////////////////Deletes Forum Post//////////////////////////
 const postDelete = (forumData) => {
   axios
-    .delete(`${APIBaseURL}/forum/${forumData._id}`)
+    .delete(`${APIBaseURL2}/forum/${forumData._id}`)
     .then(() => {
         axios
-          .get(APIBaseURL)
+          .get(APIBaseURL2)
           .then((response) => {
               setForum(response.data.thoughts)
           })
@@ -231,7 +238,7 @@ const postDelete = (forumData) => {
 const postUpdate = (event, forumData) => {
   event.preventDefault()
   axios
-    .put(`${APIBaseURL}/forum/${forumData._id}`,
+    .put(`${APIBaseURL2}/forum/${forumData._id}`,
       {
         username: newUsername,
         avatar: newAvatar,
@@ -240,7 +247,7 @@ const postUpdate = (event, forumData) => {
       }
     ).then(() => {
         axios
-          .get(APIBaseURL)
+          .get(APIBaseURL2)
           .then((response) => {
             console.log(response.data);
               setForum(response.data.thoughts)
@@ -257,7 +264,7 @@ const postUpdate = (event, forumData) => {
 const readMore = (event, msaData) => {
   event.preventDefault()
   axios
-    .put(`${APIBaseURL}/msa/${msaData._id}`,
+    .put(`${APIBaseURL2}/msa/${msaData._id}`,
       {
         case: newCase,
         location: newLocation,
@@ -268,7 +275,7 @@ const readMore = (event, msaData) => {
       }
     ).then(() => {
         axios
-          .get(APIBaseURL)
+          .get(APIBaseURL2)
           .then((response) => {
             console.log(response.data);
               setForum(response.data.shooting)
@@ -332,6 +339,7 @@ useEffect(() => {
     {seeForum ? <h1 className="title-header">Mental Health Forum</h1> : ""}
     </div>
     </div>
+    : "" }
     <div className="home-container">
     {viewHome ? <Home showHome={showHome} showMsa={showMsa} showForum={showForum} showSenators={showSenators}/> : ""}
     </div>

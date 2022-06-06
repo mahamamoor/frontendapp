@@ -8,7 +8,6 @@
   margin: 100px;
   word-break: normal;
   white-space: normal;
-  /* text-shadow: 1px 1px 5px black; */
 }
 .slideshow {
   margin: 0 auto;
@@ -85,4 +84,10 @@
 }
 .home-button:hover {
   background: red;
+}
+.msa-pagination {
+
+}
+.msa-page-item {
+
 }
