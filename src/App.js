@@ -54,8 +54,6 @@ const [msa, setMsa] = useState([]);
 const [viewHome, setViewHome] = useState(true);
 //state to show and hide msa page
 const [viewMsa, setViewMsa] = useState(false);
-// state to show and hide Modal
-const [modalIsOpen, setIsOpen] = useState(false);
 // state for current msa page
 const [currentMsaPage, setCurrentMsaPage] = useState(1);
 // state for how many posts per msa page
@@ -66,6 +64,16 @@ const [seeMsaPagination, setSeeMsaPagination] = useState(false)
 const [seeNavButtons, setSeeNavButtons] = useState(false)
 // state for NavBar
 const [seeNavBar, setSeeNavBar] = useState(false)
+// states for reading more on msa data
+const [viewModal, setViewModal] = useState(false)
+const [newCase, setNewCase] = useState()
+const [newLocation, setNewLocation] = useState()
+const [newAge, setNewAge] = useState()
+const [newSigns, setNewSigns] = useState()
+const [newRace, setNewRace] = useState()
+const [newGender, setNewGender] = useState()
+// state for viewing more msa data
+const [viewMsaData, setViewMsaData] = useState({})
 ////////////////////////////State//////////////////////////
 
 ////////////////////////////Show/Hide//////////////////////////
@@ -117,7 +125,6 @@ const showMsa = () => {
     setSeeNavButtons(false)
     setSeeNavBar(false)
   }
-
   //Controls the visibility of creating a new post
 	const toggleNewPostForm = () => {
 	  if (seeNewPostForm === false) {
@@ -140,6 +147,9 @@ const showMsa = () => {
     setEditPost({})
   }
 }
+
+// Toggling the state of a modal
+
 ////////////////////////////Show/Hide//////////////////////////
 
   // msa pagination function
@@ -175,7 +185,6 @@ const newCommentChange = (event) => {
 const newEmojiChange = (event) => {
   setNewEmoji(event.target.value)
 }
-
 ////////////////////////////Functions to setState for each value//////////////////
 
 ////////////////////////////Variables for APIBaseURL//////////////////////////
@@ -251,14 +260,49 @@ const postUpdate = (event, forumData) => {
     setNewEmoji()
     setEditPost({})
 }
-
+// read more for msa data
+const readMore = (event, msaData) => {
+  event.preventDefault()
+  axios
+    .put(`${APIBaseURL}/msa/${msaData._id}`,
+      {
+        case: newCase,
+        location: newLocation,
+        age_of_shooter: newAge,
+        prior_signs_mental_health_issues: newSigns,
+        race: newRace,
+        gender: newGender
+      }
+    ).then(() => {
+        axios
+          .get(APIBaseURL)
+          .then((response) => {
+            console.log(response.data);
+              setForum(response.data.shooting)
+          })
+    })
+    toggleModal(false)
+    setViewMsaData({})
+}
 //Assigns the post that is being edited and when update button is clicked, toggles the update form so it is visibile for that specific post
 const assignEditPost = (forumData) => {
        setEditPost(forumData);
        toggleUpdatePostForm()
-       console.log(forumData._id);
-       console.log(forumData);
  }
+ const toggleModal = () => {
+   if (viewModal === false) {
+     setViewModal(true)
+   } else {
+     setViewModal(false)
+     setViewMsaData({})
+   }
+ }
+const assignMsaDataSet = (msaData) => {
+        setViewMsaData(msaData);
+        toggleModal()
+        console.log(msaData)
+        console.log(msaData._id)
+  }
 
 ////////////////////////////Updates Forum Post//////////////////////////
 
@@ -300,7 +344,7 @@ useEffect(() => {
     {viewHome ? <Home showHome={showHome} showMsa={showMsa} showForum={showForum} showSenators={showSenators}/> : ""}
     </div>
     <div className="msa-container">
-    {viewMsa ? <Msa msa={currentDataBlurbs}/> : ""}
+    {viewMsa ? <Msa msa={currentDataBlurbs} assignMsaDataSet={assignMsaDataSet} shooting={msa} toggleModal={toggleModal} readMore={readMore} viewMsaData={viewMsaData} viewModal={viewModal}/> : ""}
     </div>
     <div>
     {seeMsaPagination ? <Paginationmsa msaPerPage={msaPerPage} totalMsaPosts={msa.length} msaPaginate={msaPaginate}/> : ""}
