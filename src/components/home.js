@@ -59,17 +59,27 @@ function Slideshow() {
 
 const Home = (props) => {
   return (
-    <div className="home-page-header">
-    <h1>America's Gun Problem</h1>
+    <div className="slideshow-page-header">
     {Slideshow()}
-    <div className="showButtons">
-      <button className="navButtons" onClick={props.showHome}>Home</button>
-      <button className="navButtons" onClick={props.showMsa}>MSA</button>
-      <button className="navButtons" onClick={props.showForum}>Forum</button>
-      <button className="navButtons" onClick={props.showSenators}>Senators</button>
+    <div className="home-page-buttons">
+      <button className="home-button" onClick={props.showMsa}>MSA</button>
+      <button className="home-button" onClick={props.showForum}>Forum</button>
+      <button className="home-button" onClick={props.showSenators}>Senators</button>
     </div>
     <div className="about-home-page">
-    <h4>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</h4>
+    <h4 className="about-app">Mass shootings have been on the rise in recent years. In 2022, there have been over 200 mass shootings in America. A mass shooting is defined as an incident resulting in 4 or more victims at the same general time and location, not including the shooter. We wanted to turn to the people and ask what can we do when our political representatives are not speaking up? This app serves as a tool to educate, heal and create change in gun control laws. Our Mass shootings in America (MSA) page is there to bring awareness on the gravity of the issue. We provide a list of Senators so that you can search and advocate for stricter gun laws in your state in hopes of gaining momentum in gun policy. Please utilize our mental health forum as a safe space to heal the hurt around us during these horrific times.</h4>
+    </div>
+    <div className="sources">
+    <h4>Sources:</h4>
+      <p>“Stanford Mass Shootings in America, courtesy of the Stanford Geospatial Center and Stanford Libraries”. https://github.com/StanfordGeospatialCenter/MSA. </p>
+      <p>Cochrane, Emily, et al. "Where Senate Republicans Stand on Gun Legislation." <i>The New York Times,</i> https://www.nytimes.com/interactive/2022/05/25/us/gun-control-republican-senators.html</p>
+      <p>"Mother Jones: A Guide to Mass Shootings in America." https://www.motherjones.com/politics/2012/07/mass-shootings-map/</p>
+      <p>"Mass Shootings." <i>Everytown,</i> https://www.everytown.org/issues/mass-shootings/</p>
+      <p>Republican senators: Republican Leadership. https://www.republicanleader.senate.gov/senate-resources/republican-senators</p>
+      <p>https://www.senate.gov/general/contact_information/senators_cfm.xml</p>
+    </div>
+    <div className="footer">
+    <footer>Created by <strong> Nikki Calamia </strong> and <strong> Maha Mamoor </strong>. June 2022.</footer>
     </div>
 		</div>
 )}

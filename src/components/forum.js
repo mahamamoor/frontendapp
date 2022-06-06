@@ -15,13 +15,23 @@ const Forum = (props) => {
 
   return(
   <>
-  <h1>Forum</h1>
-  <div className="button-container">
-    <button onClick={props.toggleNewPostForm}>New Post</button>
+  <div className="forum-summary">
+    <h2 className="about-forum">Welcome to the mental health forum. This is a safe space to share your thoughts on gun safety policy and the recent incidents. We are all here to help our fellow community members. When posting, please treat other members with respect and kindness.</h2>
+    <h3 className="forum-sources">If you are struggling with feelings of hopelessness please visit one of these sites:
+      <ul className="links">
+        <li className="link"><a className="linkz" href="https://www.nimh.nih.gov/health/statistics/mental-illness">National Institute of Mental Health (Mental Illness Among U.S. Adults</a></li>
+          <li className="link"><a className="linkz" href="https://www.samhsa.gov/find-help/disaster-distress-helpline">Disaster distress Helpline</a></li>
+        <li className="link"><a className="linkz" href="https://power2u.org/">National Empowerment Center</a></li>
+      </ul>
+    </h3>
   </div>
+  <div className="new-button-container">
+    <button className="forum-button" onClick={props.toggleNewPostForm}>New Post</button>
+  </div>
+  <div className="new-post">
   {props.seeNewPostForm ? <form onSubmit={props.newPostSubmit}>
-         Username: <input type="text" onChange={props.newUsernameChange}/><br/>
-         Avatar:
+         <p className="new-forum-headers">Username: </p><input type="text" onChange={props.newUsernameChange}/><br/>
+         <p className="new-forum-headers">Avatar: </p>
         <div className="radio-img-container">
 
           <input className="inputImg" type="radio" id="radioImgOne" name="img" value={bear} onChange={props.newAvatarChange}/>
@@ -50,10 +60,10 @@ const Forum = (props) => {
           <label for="radioImgEight"><img className="radio-image" src={pig}/></label>
 
         </div>
-         Comment: <textarea type="text" onChange={props.newCommentChange}/><br/>
+         <p className="new-forum-headers">Comment: </p><textarea type="text" onChange={props.newCommentChange}/><br/>
 
          <div class="emoji-container">
- 			     Pick an emoji
+ 			    <p className="new-forum-headers"> Pick an emoji that describes how you feel: </p>
  			     <div class="emoji-input-container">
 
              <input type="radio" id="radioEmojiOne" name="emoji" value="😭" onChange={props.newEmojiChange}/>
@@ -81,13 +91,16 @@ const Forum = (props) => {
             <label for="radioEmojiEight" className="emojiRadio">🙏</label>
  			   </div>
  			</div>
-         <input className="button" type="submit" value="Create Post"/>
+      <div className="create-button-container">
+         <input className="forum-button" type="submit" value="Create Post"/>
+      </div>
      </form> : ""}
+  </div>
   {props.forum.map((forum) => {
     return (
   		<div className="forum-card" key={forum._id}>
+        <img className="forum-img" src={forum.avatar}/>
   		  <h3>{forum.username}</h3>
-  		  <img src={forum.avatar}/>
   		  <p>{forum.comment}</p>
   		  <p>{forum.emoji}</p>
 
@@ -158,19 +171,18 @@ const Forum = (props) => {
                        <label for="radioEmojiEight" className="emojiRadio">🙏</label>
             			   </div>
             			</div>
-                  <input className="button" type="submit" value="Save Updates"/>
+                  <input className="forum-button" type="submit" value="Save Updates"/>
                 </form>
-                <button onClick={props.toggleUpdatePostForm}>Cancel</button>
+                <button className="forum-button" onClick={props.toggleUpdatePostForm}>Cancel</button>
               </div>
                : null
              : null}
              {forum._id !== props.editPost._id ?
                   !props.seeUpdatePostForm ?
-                <button onClick={(event) => {props.assignEditPost(forum)}}>Update</button>
+                <button className="forum-button" onClick={(event) => {props.assignEditPost(forum)}}>Update</button>
                 : null
               : null}
-              <button onClick={(event) => {props.postDelete(forum)}}>Delete</button>
-
+              <button className="forum-button" onClick={(event) => {props.postDelete(forum)}}>Delete</button>
   		</div>
   	 )
     })}

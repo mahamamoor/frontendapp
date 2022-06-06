@@ -62,8 +62,10 @@ const [currentMsaPage, setCurrentMsaPage] = useState(1);
 const [msaPerPage, setMsaPerPage] = useState(10);
 // state for show and hide msa page numbers
 const [seeMsaPagination, setSeeMsaPagination] = useState(false)
-
+// state for nav buttons
 const [seeNavButtons, setSeeNavButtons] = useState(false)
+// state for NavBar
+const [seeNavBar, setSeeNavBar] = useState(false)
 ////////////////////////////State//////////////////////////
 
 ////////////////////////////Show/Hide//////////////////////////
@@ -76,6 +78,7 @@ const showSenators = () => {
   setViewMsa(false)
   setSeeMsaPagination(false)
   setSeeNavButtons(true)
+  setSeeNavBar(true)
 }
 
 //Shows forum and hides everything else
@@ -87,6 +90,7 @@ const showForum = () => {
   setViewMsa(false)
   setSeeMsaPagination(false)
   setSeeNavButtons(true)
+  setSeeNavBar(true)
 }
 
 // shows msa page and hides everything else
@@ -98,6 +102,8 @@ const showMsa = () => {
     setSeeForum(false)
     setSeeSenators(false)
     setSeeNavButtons(true)
+    setSeeNavBar(true)
+
 }
 
   // shows home page and hides everything else
@@ -109,7 +115,7 @@ const showMsa = () => {
     setSeeForum(false)
     setSeeSenators(false)
     setSeeNavButtons(false)
-
+    setSeeNavBar(false)
   }
 
   //Controls the visibility of creating a new post
@@ -275,11 +281,19 @@ useEffect(() => {
 
   return (
     <>
-    {seeNavButtons ? <div className="showButtons">
+    <div className="nav-bar">
+    {seeNavBar ? <div className="showButtons">
       <button className="navButtons" onClick={showHome}>Home</button>
       <button className="navButtons" onClick={showMsa}>MSA</button>
       <button className="navButtons" onClick={showForum}>Forum</button>
       <button className="navButtons" onClick={showSenators}>Senators</button>
+    </div> : ""}
+    <div className="home-page-header">
+    {viewHome ? <h1 className="title-header">America's Gun Problem</h1> : ""}
+    {viewMsa ? <h1 className="title-header">Mass Shootings in America</h1> : ""}
+    {seeSenators ? <h1 className="title-header">Senators</h1> : ""}
+    {seeForum ? <h1 className="title-header">Mental Health Forum</h1> : ""}
+    </div>
     </div>
     : "" }
     <div className="home-container">

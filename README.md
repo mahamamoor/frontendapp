@@ -2,7 +2,8 @@
 Avatars:
 https://www.uidownload.com/free-vectors/animal-avatars-collection-free-vector-415710
 
-
+Contacting senators:
+https://blog.sanebox.com/2017/02/23/how-to-email-your-senator-and-make-your-voice-heard/
 
 June 1st
 established connection to mongo and heroku
