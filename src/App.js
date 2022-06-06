@@ -339,7 +339,6 @@ useEffect(() => {
     {seeForum ? <h1 className="title-header">Mental Health Forum</h1> : ""}
     </div>
     </div>
-    : "" }
     <div className="home-container">
     {viewHome ? <Home showHome={showHome} showMsa={showMsa} showForum={showForum} showSenators={showSenators}/> : ""}
     </div>
