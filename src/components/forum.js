@@ -28,8 +28,8 @@ const Forum = (props) => {
   <div className="new-button-container">
     <button className="forum-button" onClick={props.toggleNewPostForm}>New Post</button>
   </div>
-  <div className="new-post">
   {props.seeNewPostForm ? <form onSubmit={props.newPostSubmit}>
+    <div className="new-post">
          <p className="new-forum-headers">Username: </p><input type="text" onChange={props.newUsernameChange}/><br/>
          <p className="new-forum-headers">Avatar: </p>
         <div className="radio-img-container">
@@ -94,8 +94,8 @@ const Forum = (props) => {
       <div className="create-button-container">
          <input className="forum-button" type="submit" value="Create Post"/>
       </div>
+    </div>
      </form> : ""}
-  </div>
   {props.forum.map((forum) => {
     return (
   		<div className="forum-card" key={forum._id}>
