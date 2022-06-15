@@ -22,6 +22,7 @@
 }
 body{
   background-color: rgba(83, 166, 218, 0.09);
+
 }
 .App-logo {
   height: 40vmin;
@@ -57,10 +58,10 @@ body{
 }
 
 .how-to-take-action-1{
-  font-size: 30px;
+  font-size: 2em;
 }
 .how-to-take-action-2{
-  font-size: 25px;
+  font-size: 1.5em;
   font-style: italic;
 }
 .searchbar {
@@ -324,11 +325,18 @@ ul.pagination li a:hover{
   background-color: #0088EE;
   color: white;
 }
-@media only screen and (max-width: 800px) {
-  .nav-bar {
-    height: 10em;
-    margin: none;
+
+
+@media only screen and (max-width: 1100px) {
+  .senator-info {
+    font-size: 1.1em;
   }
+  .title-header {
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .showbuttons{
     height: 100%;
     margin: none;
@@ -337,5 +345,60 @@ ul.pagination li a:hover{
     margin: none;
     margin-bottom: 2em;
     margin-top: 2em;
+  }
+  .title-header {
+    margin: 1em;
+    margin-right: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .title-header {
+    text-align: center;
+    font-size: 2em;
+    margin: 0.5em;
+  }
+  .how-to-take-action-1{
+    margin-top: 2em;
+    font-size: 1.5em;
+  }
+  .how-to-take-action-2{
+    font-size: 1em;
+    font-style: italic;
+  }
+  .senator-card {
+    padding: 1em;
+  }
+  .new-post {
+    height: 65em;
+  }
+  .emoji-container {
+    width: 100%;
+  }
+  .new-forum-headers {
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  .emoji-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .create-button-container {
+    margin-top: 10em;
+  }
+  .forum-img {
+    height: 5em;
+    width: 5em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .new-post {
+    height: 65em;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .radio-img-container {
+    margin: 0;
   }
 }
