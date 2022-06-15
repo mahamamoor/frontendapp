@@ -49,7 +49,7 @@ function Slideshow() {
 
       <div className="slideshowDots">
       {colors.map((_, idx) => (
-        <div key={idx} className={`slideshowDot${index === idx ? " active" : ""}`} onClick={() => {setIndex(idx);}}>
+         <div key={idx} className={`slideshowDot${index === idx ? " active" : ""}`} onClick={() => {setIndex(idx);}}>
         </div>
       ))}
     </div>

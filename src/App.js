@@ -312,7 +312,7 @@ const assignMsaDataSet = (msaData) => {
 //On page load get senator msa, and forum data
 useEffect(() => {
   axios
-  .get('http://localhost:3000/project3')
+  .get(APIBaseURL2)
   .then((res) => {
   setSenator(res.data.senator)
   setForum(res.data.thoughts)
@@ -333,13 +333,12 @@ useEffect(() => {
       <button className="navButtons" onClick={showSenators}>Senators</button>
     </div> : ""}
     <div className="home-page-header">
-    {viewHome ? <h1 className="title-header">America's Gun Problem</h1> : ""}
+    {viewHome ? <h1 className="title-header-home">America's Gun Problem</h1> : ""}
     {viewMsa ? <h1 className="title-header">Mass Shootings in America</h1> : ""}
     {seeSenators ? <h1 className="title-header">Senators</h1> : ""}
     {seeForum ? <h1 className="title-header">Mental Health Forum</h1> : ""}
     </div>
     </div>
-    : "" }
     <div className="home-container">
     {viewHome ? <Home showHome={showHome} showMsa={showMsa} showForum={showForum} showSenators={showSenators}/> : ""}
     </div>
